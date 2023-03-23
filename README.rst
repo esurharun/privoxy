@@ -12,10 +12,9 @@ Example usage: run a privoxy in a container and link to a tor socks proxy contai
     docker run -d \
         --restart always \
         # the link inside the container must be named "torproxy"
-        --link torproxy:torproxy \
+        --network="host" \
         -v /etc/localtime:/etc/localtime:ro \
         -p 8118:8118 \
         --name privoxy \
-        hyperiongray/privoxy
+        esurharun/privoxy
 
-Dockerhub link: https://hub.docker.com/r/hyperiongray/privoxy/
